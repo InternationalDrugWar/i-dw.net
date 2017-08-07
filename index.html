@@ -9,7 +9,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
+		<script src="jquery.min.js"></script>
+	<script>
+      	function disableClick(){
+        document.onclick=function(event){
+          if (event.button == 2) {
+            alert('Right Click Message');
+            return false;
+          }
+        }
+      }
+    </script>
+  <body onLoad="disableClick()">
+	  
 <style>
 video {
     max-width: 100%;
@@ -17,20 +29,6 @@ video {
 }
 </style>
 	</head>
-	<script type="text/javascript">
-$(document).ready(function () {
-    //Disable cut copy paste
-    $('body').bind('cut copy paste', function (e) {
-        e.preventDefault();
-    });
-   
-    //Disable mouse right click
-    $("body").on("contextmenu",function(e){
-        return false;
-    });
-});
-</script>
-
 		<!-- Page Wrapper -->        
 			<div id="page-wrapper">
 
